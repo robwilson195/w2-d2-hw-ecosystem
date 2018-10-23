@@ -20,13 +20,16 @@ class TestRiver < MiniTest::Test
   end
 
   def test_river_has_fish
-    assert_equal(3, @river1.fishes.length)
+    assert_equal(3, @river1.count_fish)
   end
 
   def test_lose_a_fish
     @river1.lose_a_fish(@fish1)
-    assert_equal(2, @river1.fishes.length)
+    assert_equal(2, @river1.count_fish)
   end
 
+  def test_count_number_of_fish_in_river
+    assert_equal(3, @river2.count_fish)
+  end
 
 end

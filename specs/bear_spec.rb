@@ -29,14 +29,21 @@ class TestBear < MiniTest::Test
   end
 
   def test_bear_has_stomach
-    assert_equal(0, @bear1.stomach.length)
+    assert_equal(0, @bear1.food_count)
   end
 
   def test_bear_can_eat_fish_from_river
     @bear2.eat_fish(@fish2, @river2)
-    assert_equal(1, @bear2.stomach.length)
-    assert_equal(2, @river2.fishes.length)
+    assert_equal(1, @bear2.food_count)
+    assert_equal(2, @river2.count_fish)
   end
 
+  def test_bear_can_roar
+    assert_equal("Rawwwwwwrrrr!", @bear1.roar)
+  end
+
+  def test_bear_can_guage_stomach_contents
+    assert_equal(0 , @bear2.food_count)
+  end
 
 end

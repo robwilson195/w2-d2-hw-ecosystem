@@ -13,4 +13,12 @@ class Bear
     @stomach << fish
   end
 
+  def roar
+    return "Rawwwwwwrrrr!"
+  end
+
+  def food_count
+    return @stomach.length
+  end
+
 end
